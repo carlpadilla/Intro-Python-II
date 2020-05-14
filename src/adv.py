@@ -38,8 +38,10 @@ room['treasure'].s_to = room['narrow']
 # Main
 #
 
-# Make a new player object that is currently in the 'outside' room.
-player = Player(room['outside'])
+#  [X] Make a new player object that is currently in the 'outside' room.
+player = Player(input("Please enter your name: "), room['outside'])
+
+print(f"Hello, {player.name}")
 # Write a loop that:
 #
 # * Prints the current room name
@@ -51,18 +53,15 @@ player = Player(room['outside'])
 #
 # If the user enters "q", quit the game.
 
-directions = {'n': 'n_to', 's': 's_to', 'e': 'e_to', 'w': 'w_to'}
-
 while True:
-    print(player.room)
-    print(player.room.description)
-
-    choice = input('Which way do we go?')
-
-    direction = directions[choice]
-
-    try:
-        player.room = getattr(player.room, direction)
-
-    except AttributeError:
-        print('Sorry you can not go this direction ')
+    # key command input
+    cmd = input(
+        "To Move between rooms, please use: 'n', 'e', 's', 'w': \n >").lower()
+    if cmd in ["n", "e", "s", "w"]:
+        # moves player to that room
+        player.travel(cmd)
+    elif cmd == "q":
+        print("See you next time!")
+        exit()
+    else:
+        print("Please enter a direction to Move or 'q' Quit.")
