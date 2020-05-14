@@ -1,0 +1,8 @@
+Uper
+
+- Make a player class
+- Make a room class
+
+- Take user input from rooms
+    - Use spilt() to break up input
+    - Research split
