@@ -55,12 +55,12 @@ print(f"Hello, {player.name}")
 
 while True:
     # key command input
-    cmd = input(
+    command = input(
         "To Move between rooms, please use: 'n', 'e', 's', 'w': \n >").lower()
-    if cmd in ["n", "e", "s", "w"]:
+    if command in ["n", "e", "s", "w"]:
         # moves player to that room
-        player.travel(cmd)
-    elif cmd == "q":
+        player.travel(command)
+    elif command == "q":
         print("See you next time!")
         exit()
     else:
