@@ -10,4 +10,4 @@ Uper
      Make rooms able to hold multiple items
 * Make the player able to carry multiple items
 * Add items to the game that the user can carry around
-* Add `get [ITEM_NAME]` and `drop [ITEM_NAME]` commands to the parser
+* Add `get [ITEM_NAME]` and `drop [ITEM_NAME]` commands to the parser.
